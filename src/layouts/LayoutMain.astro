@@ -1,19 +1,58 @@
 ---
+import Nav from "../components/Nav.jsx";
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FernDev</title>
     <meta name="generator" content={Astro.generator} />
+  </head>
+  <body
+    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-100 bg-zinc-900 font-sans relative min-h-screen overflow-x-hidden"
+  >
+    <header class="h-screen">
+      <Nav client:load />
+      <div
+        class="container h-[80%] flex flex-col-reverse items-center justify-center gap-10 md:flex-row lg:justify-around"
+      >
+        <article class="w-96 md:h-80 flex flex-col justify-center gap-5 md:gap-16">
+          <h1 class="font-bold text-5xl text-center">Fern - Front-End</h1>
+          <p class="font-medium text-lg">
+            Hola!, Bienvenido a mi pagina personal, me llamo <span
+              class="text-manz-500">Fernando</span
+            > tengo 19 años y soy de <span class="text-manz-500">Argentina</span
+            >. desarrollo paginas web con Frameworks como <span
+              class="text-manz-500">Astro</span
+            > y
+            <span class="text-manz-500">React</span>.
+          </p>
+        </article>
+        <div class="w-80 h-80">
+        <img
+          class="rounded-xl w-64 md:w-80"
+          src="https://picsum.photos/320"
+          alt=""
+        />
+        </div>
+      </div>
+    </header>
+    <slot />
     <script
       src="https://kit.fontawesome.com/3cabd74866.js"
       crossorigin="anonymous"
     ></script>
-  </head>
-  <body>
-    <slot/>
   </body>
 </html>
+<style>
+    img{
+      box-shadow: 7px -7px 0 -3px rgb(173, 173, 171),7px -7px black, 14px -14px 0px -3px rgba(173, 173, 171),14px -14px black;
+      transition: all 500ms ease-out;
+    }
+    img:hover{
+      box-shadow: none;
+    }
+  
+</style>
