@@ -3,11 +3,12 @@ import Nav from "../components/Nav.jsx";
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="overflow-hidden">
+<html lang="es" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FernDev</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
@@ -19,7 +20,7 @@ import Nav from "../components/Nav.jsx";
         class="container h-[80%] flex flex-col-reverse items-center justify-center gap-10 md:flex-row lg:justify-around"
       >
         <article class="w-96 md:h-80 flex flex-col justify-center gap-5 md:gap-16">
-          <h1 class="font-bold text-5xl text-center">Fern - Front-End</h1>
+          <h1 class="font-bold text-5xl ">Fern - Front-End</h1>
           <p class="font-medium text-lg">
             Hola!, Bienvenido a mi pagina personal, me llamo <span
               class="text-manz-500">Fernando</span
@@ -31,11 +32,11 @@ import Nav from "../components/Nav.jsx";
           </p>
         </article>
         <div class="w-80 h-80">
-        <img
-          class="rounded-xl w-64 md:w-80"
-          src="https://picsum.photos/320"
-          alt=""
-        />
+            <img
+              class="rounded-xl w-64 md:w-80"
+              src="https://picsum.photos/320"
+              alt=""
+            />
         </div>
       </div>
     </header>
@@ -48,11 +49,10 @@ import Nav from "../components/Nav.jsx";
 </html>
 <style>
     img{
-      box-shadow: 7px -7px 0 -3px rgb(173, 173, 171),7px -7px black, 14px -14px 0px -3px rgba(173, 173, 171),14px -14px black;
+      box-shadow: 10px 7px 0 -2px #27272a,10px 7px black, 20px 14px 0px -2px #27272a,20px 14px black;
       transition: all 500ms ease-out;
     }
     img:hover{
       box-shadow: none;
     }
-  
 </style>
