@@ -1,6 +1,14 @@
 ---
 import Nav from "../components/Nav.jsx";
 import ImgAnimation from "../components/ImgAnimation.jsx";
+import { motion } from "framer-motion";
+const variants = {
+    visible: {
+      "::after": {
+        width: '50px' ,
+        backgroundColor: 'red',
+      }
+    }}
 ---
 
 <!DOCTYPE html>
@@ -9,7 +17,7 @@ import ImgAnimation from "../components/ImgAnimation.jsx";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FernDev</title>
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
@@ -20,8 +28,18 @@ import ImgAnimation from "../components/ImgAnimation.jsx";
       <div
         class="container h-[80%] flex flex-col-reverse items-center justify-center gap-10 md:flex-row lg:justify-around"
       >
-        <article class="w-96 md:h-80 flex flex-col justify-center gap-5 md:gap-16">
-          <h1 class="font-bold text-5xl ">Fern - Front-End</h1>
+        <article
+          class="w-96 md:h-80 flex flex-col justify-center gap-5 md:gap-16"
+        >
+        <motion.div
+        className="overflow-hidden border-r-4 border-manz-500"
+        initial={{ width: "0px", opacity: 1, borderRight: "none"}}
+        animate={{ scale: 1, width: "100%", borderRight:'4px', borderColor:'#E1E111', borderStyle: 'solid' }}
+        transition={{ duration: 1.5 }}
+        client:load
+      >
+        <h1 class="font-bold text-5xl w-96">Fern - Front-End</h1>
+      </motion.div>
           <p class="font-medium text-lg">
             Hola!, Bienvenido a mi pagina personal, me llamo <span
               class="text-manz-500">Fernando</span
@@ -51,11 +69,12 @@ import ImgAnimation from "../components/ImgAnimation.jsx";
   </body>
 </html>
 <style>
-    img{
-      box-shadow: 10px 7px 0 -2px #27272a,10px 7px black, 20px 14px 0px -2px #27272a,20px 14px black;
-      transition: all 500ms ease-out;
-    }
-    img:hover{
-      box-shadow: none;
-    }
+  img {
+    box-shadow: 10px 7px 0 -2px #27272a, 10px 7px black,
+      20px 14px 0px -2px #27272a, 20px 14px black;
+    transition: all 500ms ease-out;
+  }
+  img:hover {
+    box-shadow: none;
+  }
 </style>
