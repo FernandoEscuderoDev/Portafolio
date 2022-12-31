@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav.jsx";
+import ImgAnimation from "../components/ImgAnimation.jsx";
 ---
 
 <!DOCTYPE html>
@@ -32,11 +33,13 @@ import Nav from "../components/Nav.jsx";
           </p>
         </article>
         <div class="w-80 h-80">
+          <ImgAnimation client:load>
             <img
               class="rounded-xl w-64 md:w-80"
               src="https://picsum.photos/320"
               alt=""
             />
+          </ImgAnimation>
         </div>
       </div>
     </header>
