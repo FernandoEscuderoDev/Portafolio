@@ -1,6 +1,7 @@
 import ItemsNav from "./ItemsNav.jsx";
 import NavMobile from "./NavMobile.jsx";
 import { useState } from "react";
+import { motion } from "framer-motion";
 export default function Nav() {
   const [Open, setOpen] = useState(true);
   const handleClick = () => {
@@ -10,13 +11,17 @@ export default function Nav() {
     <nav className="font-mono container my-2">
       <div className="flex flex-row items-center justify-between p-5 w-full">
         <div className="flex w-full justify-between">
-          <a href="" className="h-full flex items-start text-4xl">
-            <h1
-              className="before:text-manz-500 before:content-['<'] after:text-manz-500 after:content-['>'] before:font-bold after:font-bold"
-              target="_blank"
+          <a href="" className="h-full flex items-start text-4xl before:text-manz-500 before:content-['<'] after:text-manz-500 after:content-['>'] before:font-bold after:font-bold">
+            <motion.div
+              className="overflow-hidden"
+              initial={{ width: "0px" }}
+              animate={{
+                width: "100%",
+              }}
+              transition={{ delay:0.5 ,duration: 1.5, ease:"easeInOut" }}
             >
-              FernDev
-            </h1>
+              <h1>FernDev</h1>
+            </motion.div>
           </a>
           <ul className="sm:flex gap-5 hidden h-full text-lg font-medium">
             <ItemsNav />
@@ -26,7 +31,9 @@ export default function Nav() {
             onClick={handleClick}
           >
             <i
-              className={Open ? "fa-solid fa-bars" : "fa-solid fa-x text-manz-500"}
+              className={
+                Open ? "fa-solid fa-bars" : "fa-solid fa-x text-manz-500"
+              }
             ></i>
           </button>
         </div>
