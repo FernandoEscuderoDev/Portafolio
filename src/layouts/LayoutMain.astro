@@ -38,6 +38,7 @@ const variants = {
             animate={{
               scale: 1,
               width: "100%",
+              border:`4px #E1E111`,
               borderRight: "4px",
               borderColor: "#E1E111",
               borderStyle: "solid",
@@ -50,16 +51,14 @@ const variants = {
           <motion.p
             client:load
             className="font-medium text-lg"
-            initial={{ opacity:0}}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 1.5, ease: "easeInOut" }}
           >
             Hola!, Bienvenido a mi pagina personal, me llamo <span
               class="text-manz-500">Fernando</span
-            > tengo 19 años y soy de <span class="text-manz-500">Argentina</span
-            >. Desarrollo paginas web con Frameworks como <span
-              class="text-manz-500">Astro</span
-            > y
+            > tengo 19 años y soy de Argentina. Desarrollo paginas web con Frameworks
+            como <span class="text-manz-500">Astro</span> y
             <span class="text-manz-500">React</span>.
           </motion.p>
         </article>
@@ -83,7 +82,10 @@ const variants = {
 
   <style>
     img {
-      box-shadow: -10px 7px 0 2px #27272a, -20px 14px 0 2px #222325;
+      box-shadow:
+        -10px 7px 0 2px rgb(39, 39, 42, 0.95),
+        -20px 14px 0 2px rgb(29, 29, 32, 0.95),
+        -30px 22px 0 2px rgba(24, 24, 27, 0.95);
       transition: all 500ms ease-out;
     }
     img:hover {
