@@ -1,6 +1,6 @@
 ---
-import Nav from "../components/Nav.jsx";
-import ImgAnimation from "../components/ImgAnimation.jsx";
+import Nav from "../components/header/Nav.jsx";
+import ImgAnimation from "../components/header/ImgAnimation.jsx";
 import { motion } from "framer-motion";
 const variants = {
   visible: {
@@ -22,7 +22,7 @@ const variants = {
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
-    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-100 bg-zinc-900 font-sans relative min-h-screen overflow-x-hidden"
+    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-200 bg-zinc-900 font-sans relative min-h-screen overflow-x-hidden"
   >
     <header class="h-screen">
       <Nav client:load />
@@ -43,7 +43,7 @@ const variants = {
             transition={{ delay: 0.15, duration: 2, ease: "easeInOut" }}
             client:visible
           >
-            <h1 class="font-bold text-5xl w-96">Fern - Front-End</h1>
+            <h1 class="font-bold text-5xl w-96 text-zinc-50">Fern - Front-End</h1>
           </motion.div>
           <motion.p
             client:load
@@ -68,6 +68,11 @@ const variants = {
             />
           </ImgAnimation>
         </div>
+      </div>
+      <div class="w-full flex justify-center text-2xl text-zinc-50">
+        <a href="">
+          <i class="fa-solid fa-arrow-down animate-bounce"></i>
+        </a>
       </div>
     </header>
     <slot />
