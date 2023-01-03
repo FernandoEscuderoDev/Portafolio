@@ -30,7 +30,7 @@ const variants = {
         class="container h-[80%] flex flex-col-reverse items-center justify-center gap-10 md:flex-row lg:justify-around"
       >
         <article
-          class="w-96 md:h-80 flex flex-col justify-center gap-5 md:gap-16"
+          class="w-96 md:h-80 flex flex-col justify-center gap-4 md:gap-10"
         >
           <motion.div
             className="overflow-hidden border-r-4 border-manz-500"
@@ -38,12 +38,14 @@ const variants = {
             animate={{
               scale: 1,
               width: "100%",
-              borderRight:"4px #E1E111 solid"
+              borderRight: "4px #E1E111 solid",
             }}
             transition={{ delay: 0.15, duration: 2, ease: "easeInOut" }}
             client:visible
           >
-            <h1 class="font-bold text-5xl w-96 text-zinc-50">Fern - Front-End</h1>
+            <h1 class="font-bold text-5xl w-96 text-zinc-50">
+              Fern - Front-End
+            </h1>
           </motion.div>
           <motion.p
             client:load
@@ -70,9 +72,7 @@ const variants = {
         </div>
       </div>
       <div class="w-full flex justify-center text-2xl text-zinc-50">
-        <a href="">
-          <i class="fa-solid fa-arrow-down animate-bounce"></i>
-        </a>
+        <i class="fa-solid fa-arrow-down animate-bounce"></i>
       </div>
     </header>
     <slot />
@@ -84,8 +84,7 @@ const variants = {
 
   <style>
     img {
-      box-shadow:
-        -10px 7px 0 2px rgb(39, 39, 42, 0.95),
+      box-shadow: -10px 7px 0 2px rgb(39, 39, 42, 0.95),
         -20px 14px 0 2px rgb(29, 29, 32, 0.95),
         -30px 22px 0 2px rgba(24, 24, 27, 0.95);
       transition: all 500ms ease-out;

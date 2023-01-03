@@ -11,7 +11,7 @@ export default function Nav() {
     <nav className="font-mono container my-2">
       <div className="flex flex-row items-center justify-between p-5 w-full">
         <div className="flex w-full justify-between">
-          <a href="" className="h-full flex items-start text-4xl before:text-manz-500 before:content-['<'] after:text-manz-500 after:content-['>'] before:font-bold after:font-bold">
+          <a href="" className="h-full flex flex-row items-center text-4xl before:text-manz-500 before:content-['<'] after:text-manz-500 after:content-['>'] before:font-bold after:font-bold">
             <motion.div
               className="overflow-hidden"
               initial={{ width: "0px" }}
