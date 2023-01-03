@@ -18,7 +18,7 @@ export default function Nav() {
               animate={{
                 width: "100%",
               }}
-              transition={{ delay:0.5 ,duration: 1.5, ease:"easeInOut" }}
+              transition={{ delay:0.3 ,duration: 1.5, ease:"easeInOut" }}
             >
               <h1>FernDev</h1>
             </motion.div>

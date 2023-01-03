@@ -34,16 +34,13 @@ const variants = {
         >
           <motion.div
             className="overflow-hidden border-r-4 border-manz-500"
-            initial={{ width: "0px", opacity: 1, borderRight: "none" }}
+            initial={{ width: "0px", opacity: 1, border: "none" }}
             animate={{
               scale: 1,
               width: "100%",
-              border:`4px #E1E111`,
-              borderRight: "4px",
-              borderColor: "#E1E111",
-              borderStyle: "solid",
+              borderRight:"4px #E1E111 solid"
             }}
-            transition={{ delay: 0.8, duration: 1.5, ease: "easeInOut" }}
+            transition={{ delay: 0.3, duration: 1.5, ease: "easeInOut" }}
             client:visible
           >
             <h1 class="font-bold text-5xl w-96">Fern - Front-End</h1>
@@ -53,7 +50,7 @@ const variants = {
             className="font-medium text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1.5, ease: "easeInOut" }}
+            transition={{ delay: 0.3, duration: 1.5, ease: "easeInOut" }}
           >
             Hola!, Bienvenido a mi pagina personal, me llamo <span
               class="text-manz-500">Fernando</span
