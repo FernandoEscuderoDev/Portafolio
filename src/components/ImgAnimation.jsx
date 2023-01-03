@@ -5,7 +5,7 @@ export default function ImgAnimation({ children }) {
       className="w-full"
       initial={{scale:0.7, opacity: 0}}
       animate={{scale: 1}}
-      transition={{delay:0.25,duration: 1.5 }}
+      transition={{duration: 1.2 }}
       whileInView={{opacity: 1 }}
     >
       {children}
