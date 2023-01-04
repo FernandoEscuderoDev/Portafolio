@@ -24,7 +24,7 @@ const variants = {
   <body
     class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-200 bg-zinc-900 font-sans relative min-h-screen overflow-x-hidden"
   >
-    <header class="h-screen">
+    <header class="h-screen w-full">
       <Nav client:load />
       <div
         class="container h-[80%] flex flex-col-reverse items-center justify-center gap-7 md:flex-row lg:justify-around"
@@ -40,7 +40,7 @@ const variants = {
               width: "98%",
               borderRight: "4px #E1E111 solid",
             }}
-            transition={{ delay: 0.15, duration: 2, ease: "easeInOut" }}
+            transition={{ delay: 0.1, duration: 2, ease: "easeInOut" }}
             client:visible
           >
             <h1 class="font-bold text-5xl w-96 text-zinc-50">
@@ -52,7 +52,7 @@ const variants = {
             className="font-medium text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.15, duration: 1.5, ease: "easeInOut" }}
+            transition={{ delay: 0.1, duration: 1.5, ease: "easeInOut" }}
           >
             Hola!, Bienvenido a mi pagina personal, me llamo <span
               class="text-manz-500">Fernando</span
@@ -62,7 +62,7 @@ const variants = {
           </motion.p>
         </article>
         <div class="w-80 h-80">
-          <ImgAnimation client:visible>
+          <ImgAnimation client:load>
             <img
               class="rounded-xl w-64 md:w-80"
               src="https://picsum.photos/320"
@@ -76,6 +76,9 @@ const variants = {
       </div>
     </header>
     <slot />
+    <footer>
+
+    </footer>
     <script
       src="https://kit.fontawesome.com/3cabd74866.js"
       crossorigin="anonymous"
