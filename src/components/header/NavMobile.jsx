@@ -3,23 +3,17 @@ import { motion } from "framer-motion";
 export default function NavMobile({ event }) {
   const variants = {
     open: {
-      x:"100vh"
+      x:"100vw"
     },
     closed: {
       x: "0",
       }
     }
   return (
-    // <ul
-    //   className={`sm:hidden transition-all ease-in duration-300 z-10 flex flex-col items-center justify-center gap-14 absolute
-    //       ${event}
-    //       top-0  w-full h-screen bg-zinc-800/80 text-xl font-bold `}
-    //
-    //   <ItemsNav />
     <motion.ul
-      className={`sm:hidden z-10 inline-flex flex-col items-center justify-center gap-14 absolute top-0  w-full h-screen bg-zinc-800/80 text-xl font-bold`}
-      initial={{}}
-      animate={{event}}
+      className={`sm:hidden z-10 inline-flex flex-col items-center justify-center gap-14 absolute top-0 left-0  w-screen h-screen bg-zinc-800/80 text-xl font-bold`}
+      initial={{x:"100vw"}}
+      animate={{}}
       transition={{duration:1.2, type:"spring"}}
       variants={{variants}}
     >

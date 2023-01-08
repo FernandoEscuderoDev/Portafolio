@@ -22,7 +22,7 @@ const variants = {
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
-    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-200 bg-zinc-900 font-sans relative min-h-screen overflow-x-hidden"
+    class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-100 font-sans relative min-h-screen overflow-x-hidden"
   >
     <header class="h-screen w-full">
       <Nav client:load />
@@ -64,36 +64,47 @@ const variants = {
         <div class="w-80 h-80">
           <ImgAnimation client:load>
             <img
-              class="rounded-xl w-64 md:w-80"
+              class="rounded-xl w-64 md:w-80 sombra"
               src="https://picsum.photos/320"
               alt=""
             />
           </ImgAnimation>
         </div>
       </div>
-      <div class="w-full flex justify-center text-2xl text-zinc-50">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.1, duration: 1.5, ease: "easeInOut" }}
+        className="w-full flex justify-center text-2xl text-zinc-50"
+        client:load
+      >
         <i class="fa-solid fa-arrow-down animate-bounce"></i>
-      </div>
+      </motion.div>
     </header>
     <slot />
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script
       src="https://kit.fontawesome.com/3cabd74866.js"
       crossorigin="anonymous"
     ></script>
   </body>
-
-  <style>
-    img {
+  <style is:global>
+    .sombra {
       box-shadow: -10px 7px 0 2px rgb(39, 39, 42, 0.95),
         -20px 14px 0 2px rgb(29, 29, 32, 0.95),
         -30px 22px 0 2px rgba(24, 24, 27, 0.95);
-      transition: all 500ms ease-out;
+      transition: all 400ms ease-out;
     }
-    img:hover {
+    .sombra:hover {
       box-shadow: none;
+    }
+    .efectoTarjeta {
+      background-image: url("https://picsum.photos/200/300?random=1");
+      background: linear-gradient(90deg, #e1e11110 5%, #4545051f 100%);
+      clip-path: polygon(0 0, 100% 0, 120% 15%, 0 50%);
+    }
+    .efectoTarjetaPrincipal{
+      background: linear-gradient(90deg, #374151 5%, #111827 100%);
     }
   </style>
 </html>

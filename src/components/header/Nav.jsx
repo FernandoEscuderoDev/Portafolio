@@ -35,13 +35,11 @@ export default function Nav() {
             <ItemsNav />
           </motion.ul>
           <button
-            className="sm:hidden block z-20 active:bg-zinc-700/90 px-2 rounded-full text-2xl"
+            className="sm:hidden block z-20 active:bg-zinc-700/30 px-2 rounded-full text-2xl"
             onClick={handleClick}
           >
             <i
-              className={
-                Open ? "fa-solid fa-bars" : "fa-solid fa-x text-manz-500"
-              }
+              className={`hover:text-slate-300/90 transition-all duration-200 ${Open ? "fa-solid fa-bars" : "fa-solid fa-x"}`}
             ></i>
           </button>
         </div>
