@@ -19,7 +19,7 @@ export default function Card() {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
     },
     {
-      src: "https://picsum.photos/200/300?random=3",
+      src: "https://picsum.photos/200/300?random=4",
       title: "Astro",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
@@ -28,15 +28,15 @@ export default function Card() {
 
   return (
     <>
-      {datos.map((datos) => (
-        <div className="relative efectoTarjetaPrincipal shadow-xl shadow-zinc-900 rounded-xl w-64 h-80">
+      {datos.map((dato) => (
+        <div key={dato} className="relative efectoTarjetaPrincipal shadow-xl shadow-zinc-900 rounded-xl w-64 h-80">
           <div className="absolute h-full w-full flex items-center justify-evenly flex-col z-50 text-center text-zinc-100">
             <img
-              src={datos.src}
+              src={dato.src}
               className="object-cover rounded-full w-28 h-28 shadow-lg shadow-zinc-900"
             />
-            <h1 className="font-bold text-2xl">{datos.title}</h1>
-            <p className="text-sm w-[80%]">{datos.content}
+            <h1 className="font-bold text-2xl">{dato.title}</h1>
+            <p className="text-sm w-[80%]">{dato.content}
             </p>
           </div>
           <div className="efectoTarjeta rounded-xl w-full h-full"></div>

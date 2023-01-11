@@ -2,16 +2,8 @@
 import Nav from "../components/header/Nav.jsx";
 import ImgAnimation from "../components/header/ImgAnimation.jsx";
 import { motion } from "framer-motion";
-const variants = {
-  visible: {
-    "::after": {
-      width: "50px",
-      backgroundColor: "red",
-    },
-  },
-};
+import Footer from "../components/footer/Footer.jsx";
 ---
-
 <!DOCTYPE html>
 <html lang="es" class="overflow-x-hidden">
   <head>
@@ -61,10 +53,10 @@ const variants = {
             <span class="text-manz-500">React</span>.
           </motion.p>
         </article>
-        <div class="w-80 h-80">
+        <div class="sm:w-80 h-80 w-full">
           <ImgAnimation client:load>
             <img
-              class="rounded-xl w-64 md:w-80 sombra"
+              class="rounded-xl w-64 md:w-80 mx-auto sombra"
               src="https://picsum.photos/320"
               alt=""
             />
@@ -78,11 +70,11 @@ const variants = {
         className="w-full flex justify-center text-2xl text-zinc-50"
         client:load
       >
-        <i class="fa-solid fa-arrow-down animate-bounce"></i>
+        <i class="fa-solid fa-arrow-down animate-bounce pb-8"></i>
       </motion.div>
     </header>
     <slot />
-    <footer></footer>
+    <Footer client:visible></Footer>
     <script
       src="https://kit.fontawesome.com/3cabd74866.js"
       crossorigin="anonymous"
@@ -93,7 +85,7 @@ const variants = {
       box-shadow: -10px 7px 0 2px rgb(39, 39, 42, 0.95),
         -20px 14px 0 2px rgb(29, 29, 32, 0.95),
         -30px 22px 0 2px rgba(24, 24, 27, 0.95);
-      transition: all 400ms ease-out;
+      transition: all 500ms ease-out;
     }
     .sombra:hover {
       box-shadow: none;

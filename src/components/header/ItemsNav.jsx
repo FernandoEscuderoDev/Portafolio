@@ -1,7 +1,7 @@
 export default function ItemsNav() {
   const links = [
     { name: "Home", src: "./" },
-    { name: "Proyect", src: "#proyect" },
+    { name: "Proyect", src: "./proyect" },
     { name: "Contact", src: "./contact" }
   ];
   return (
