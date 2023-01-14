@@ -4,13 +4,16 @@ export default function Skills() {
       titulo: "Skills",
       iconos: [
         {
-          src: [
-            "icon/html5.png",
-            "icon/css3.png",
-            "icon/javascript.png",
-            "icon/react.png",
-          ],
-          alt: ["html5", "css3", "javascript", "react"],
+          src: "icon/html5.png",
+          alt: "Html5",
+        },
+        {
+          src: "icon/javascript.png",
+          alt: "Javascript",
+        },
+        {
+          src: "icon/css3.png",
+          alt: "Css3",
         },
       ],
     },
