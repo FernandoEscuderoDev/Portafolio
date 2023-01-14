@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="container flex flex-col gap-10 md:flex-row items-center md:justify-between w-full p-5">
       <div className="flex items-center w-48 justify-around text-4xl">
-        <a href="https://www.linkedin.com/in/fernandoescuderodev/" data-tooltip="html">
+        <a href="https://www.linkedin.com/in/fernandoescuderodev/">
           <i className="fa-brands fa-linkedin"></i>
         </a>
         <a href="https://github.com/FernandoEscuderoDev">

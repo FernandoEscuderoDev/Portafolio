@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 export default function Logo() {
   return (
     <a
-      href=""
+      href="./"
       className={`flex flex-row items-center text-4xl before:text-manz-500 before:content-['<']  after:text-manz-500 after:content-['>'] before:font-bold after:font-bold`}
     >
       <motion.div
