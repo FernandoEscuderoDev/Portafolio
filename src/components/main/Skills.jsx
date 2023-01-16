@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 export default function Skills() {
   const contenidos = [
     {
@@ -5,15 +6,19 @@ export default function Skills() {
       iconos: [
         {
           src: "icon/html5.png",
-          alt: "Html5",
-        },
-        {
-          src: "icon/javascript.png",
-          alt: "Javascript",
+          alt: "html",
         },
         {
           src: "icon/css3.png",
-          alt: "Css3",
+          alt: "css",
+        },
+        {
+          src: "icon/javascript.png",
+          alt: "javascript",
+        },
+        {
+          src: "icon/react.png",
+          alt: "react",
         },
       ],
     },
@@ -21,17 +26,25 @@ export default function Skills() {
       titulo: "Resources",
       iconos: [
         {
-          src: ["icon/git.png", "icon/npm.png"],
-          alt: ["git", "npm"],
+          src: "icon/git.png",
+          alt: "git",
+        },
+        {
+          src: "icon/npm.png",
+          alt: "npm",
         },
       ],
     },
     {
-      titulo: "Frameworks",
+      titulo: "Frameworks / Librery",
       iconos: [
         {
-          src: ["icon/astro.png", "icon/tailwind.png"],
-          alt: ["astro", "tailwind"],
+          src: "icon/astro.png",
+          alt: "astro",
+        },
+        {
+          src: "icon/tailwind.png",
+          alt: "tailwind",
         },
       ],
     },
@@ -40,8 +53,16 @@ export default function Skills() {
     <>
       {contenidos.map((contenido) => (
         <li className="" key={contenido}>
-          <div key={contenido} className="flex flex-col text-center">
-            <h2 className="text-3xl p-4 bg-zinc-700">{contenido.titulo}</h2>
+          <div className="flex flex-col text-center">
+            <div className="p-4 bg-zinc-700 overflow-hidden">
+              <motion.h2
+                className="text-3xl"
+                initial={{ y: "50px" }}
+                animate={{ y: 0}}
+              >
+                {contenido.titulo}
+              </motion.h2>
+            </div>
             <div className="flex justify-center gap-10">
               {contenido.iconos.map((iconos) => (
                 <img

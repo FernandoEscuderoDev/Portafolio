@@ -12,7 +12,7 @@ export default function Nav() {
     <nav className="font-mono container my-2">
       <div className="flex flex-row items-center justify-between p-5 w-full">
         <div className="flex w-full justify-between">
-          <Logo/>
+          <Logo />
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -26,11 +26,13 @@ export default function Nav() {
             onClick={handleClick}
           >
             <i
-              className={`hover:text-slate-300/90 transition-all duration-200 ${Open ? "fa-solid fa-bars" : "fa-solid fa-x"}`}
+              className={`hover:text-slate-300/90 transition-all duration-200 ${
+                Open ? "fa-solid fa-bars" : "fa-solid fa-x"
+              }`}
             ></i>
           </button>
         </div>
-        <NavMobile event={Open ? "open" : "closed"} />
+        <NavMobile event={Open} />
       </div>
     </nav>
   );
