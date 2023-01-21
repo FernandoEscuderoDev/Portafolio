@@ -4,6 +4,7 @@ import ImgAnimation from "../components/header/ImgAnimation.jsx";
 import { motion } from "framer-motion";
 import Footer from "../components/footer/Footer.jsx";
 ---
+
 <!DOCTYPE html>
 <html lang="es" class="overflow-x-hidden">
   <head>
@@ -17,7 +18,7 @@ import Footer from "../components/footer/Footer.jsx";
     class="bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-800 text-zinc-100 font-sans relative min-h-screen overflow-x-hidden"
   >
     <header class="h-screen w-full">
-      <Nav client:load />
+      <Nav client:visible />
       <div
         class="container h-[80%] flex flex-col-reverse items-center justify-center gap-7 md:flex-row lg:justify-around"
       >
@@ -40,7 +41,7 @@ import Footer from "../components/footer/Footer.jsx";
             </h1>
           </motion.div>
           <motion.p
-            client:load
+            client:visible
             className="font-medium text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -54,7 +55,7 @@ import Footer from "../components/footer/Footer.jsx";
           </motion.p>
         </article>
         <div class="sm:w-80 h-80 w-full">
-          <ImgAnimation client:load>
+          <ImgAnimation client:visible>
             <img
               class="rounded-xl w-64 md:w-80 mx-auto sombra"
               src="https://picsum.photos/320"
@@ -68,13 +69,13 @@ import Footer from "../components/footer/Footer.jsx";
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1, duration: 1.5, ease: "easeInOut" }}
         className="w-full flex justify-center text-2xl text-zinc-50"
-        client:load
+        client:visible
       >
-        <i class="fa-solid fa-arrow-down animate-bounce pb-8"></i>
+        <i class="fa-solid fa-arrow-down animate-bounce cursor-pointer pb-8"></i>
       </motion.div>
     </header>
     <slot />
-    <Footer client:visible></Footer>
+    <Footer client:visible />
     <script
       src="https://kit.fontawesome.com/3cabd74866.js"
       crossorigin="anonymous"
@@ -95,8 +96,14 @@ import Footer from "../components/footer/Footer.jsx";
       background: linear-gradient(90deg, #e1e11110 5%, #4545051f 100%);
       clip-path: polygon(0 0, 100% 0, 120% 15%, 0 50%);
     }
-    .efectoTarjetaPrincipal{
+    .efectoTarjetaPrincipal {
       background: linear-gradient(90deg, #374151 5%, #111827 100%);
     }
   </style>
+  <script>
+    const iconoFlecha = document.querySelector(".fa-arrow-down");
+    iconoFlecha?.addEventListener("click", () => {
+      window.scrollTo({ top: 650, behavior: "smooth" });
+    });
+  </script>
 </html>

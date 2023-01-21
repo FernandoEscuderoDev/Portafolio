@@ -2,7 +2,7 @@ import Logo from "../header/Logo";
 
 export default function Footer() {
   return (
-    <footer className="container flex flex-col gap-10 md:flex-row items-center md:justify-between w-full p-5">
+    <footer className="container flex flex-col gap-10 md:flex-row items-center md:justify-between w-full py-2">
       <div className="flex items-center w-48 justify-around text-4xl">
         <a href="https://www.linkedin.com/in/fernandoescuderodev/">
           <i className="fa-brands fa-linkedin"></i>
