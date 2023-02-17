@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 export default function Skills() {
   const contenidos = [
     {
@@ -8,22 +7,22 @@ export default function Skills() {
         {
           src: "icon/html5.png",
           alt: "html",
-          delay:0.6
+          delay: 0.6,
         },
         {
           src: "icon/css3.png",
           alt: "css",
-          delay:0.7
+          delay: 0.7,
         },
         {
           src: "icon/javascript.png",
           alt: "javascript",
-          delay:0.8
+          delay: 0.8,
         },
         {
           src: "icon/react.png",
           alt: "react",
-          delay:0.9
+          delay: 0.9,
         },
       ],
     },
@@ -33,12 +32,12 @@ export default function Skills() {
         {
           src: "icon/git.png",
           alt: "git",
-          delay:0.6
+          delay: 0.6,
         },
         {
           src: "icon/npm.png",
           alt: "npm",
-          delay:0.7
+          delay: 0.7,
         },
       ],
     },
@@ -48,12 +47,12 @@ export default function Skills() {
         {
           src: "icon/astro.png",
           alt: "astro",
-          delay:0.6
+          delay: 0.6,
         },
         {
           src: "icon/tailwind.png",
           alt: "tailwind",
-          delay:0.7
+          delay: 0.7,
         },
       ],
     },
@@ -66,25 +65,31 @@ export default function Skills() {
             <div className="p-4 bg-zinc-700 overflow-hidden">
               <motion.h2
                 className="text-3xl"
-                initial={{ y: "50px" }}
+                initial={{ y: 50 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0.30 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
               >
                 {contenido.titulo}
               </motion.h2>
             </div>
-            <div className="flex justify-center overflow-hidden gap-10">
+            <div className="flex relative justify-center overflow-hidden gap-10">
               {contenido.iconos.map((iconos) => (
-                <motion.img
-                  width="64px"
-                  src={iconos.src}
-                  alt={iconos.alt}
-                  className="py-8"
-                  key={iconos}
-                  initial={{ opacity:0 }}
-                  animate={{ opacity:1 }}
-                  transition={{ duration: 1.2, delay: iconos.delay }}
-                ></motion.img>
+                <div className="flex flex-col capitalize gap-2 my-4">
+                  <motion.img
+                    width="64px"
+                    src={iconos.src}
+                    alt={iconos.alt}
+                    key={iconos}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.2, delay: iconos.delay }}
+                  />
+                  <motion.h2
+                  initial={{opacity:0}}
+                  animate={{opacity:[0,0.5,1]}}
+                  transition={{delay:iconos.delay}}
+                  >{iconos.alt}</motion.h2>
+                </div>
               ))}
             </div>
           </div>
