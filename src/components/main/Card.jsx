@@ -63,6 +63,11 @@ export default function Card() {
               opacity: 1,
               transition: { duration: 0.2 },
             }}
+            whileTap={{
+              backdropFilter: "blur(4px)",
+              opacity: 1,
+              transition: { duration: 0.2 },
+            }}
           >
             <h3 className="text-manz-500">{dato.title}</h3>
             <p className="text-sm w-3/4">{dato.content}</p>
