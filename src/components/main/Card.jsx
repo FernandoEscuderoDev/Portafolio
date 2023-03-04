@@ -1,59 +1,82 @@
+import { motion } from "framer-motion";
 export default function Card() {
   const datos = [
     {
-      src: "https://picsum.photos/200/300?random=1",
-      title: "Html",
+      src: "/img/portafolio.png",
+      title: "Portafolio",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "#",
     },
     {
-      src: "https://picsum.photos/200/300?random=2",
-      title: "Css",
+      src: "/img/pomodoro.png",
+      title: "Pomodoro",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "https://pomodoro-ferndev.vercel.app/",
     },
     {
-      src: "https://picsum.photos/200/300?random=3",
-      title: "JavaScript",
+      src: "/img/encriptador.png",
+      title: "Encriptador Alura",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "https://fernandoescuderodev.github.io/EncriptadorAlura/",
     },
     {
-      src: "https://picsum.photos/200/300?random=4",
-      title: "Astro",
+      src: "/img/frontmentor.png",
+      title: "Frontend Mentor - QR code",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "https://fernandoescuderodev.github.io/frontend-mentor-challenges-qr/",
     },
     {
-      src: "https://picsum.photos/200/300?random=5",
-      title: "Astro",
+      src: "/img/calculadora.png",
+      title: "Calculadora",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "https://fernandoescuderodev.github.io/Calculadora-js/",
     },
     {
-      src: "https://picsum.photos/200/300?random=6",
-      title: "Astro",
+      src: "/img/cuidarte.png",
+      title: "Cuidarte",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo minus hic nobis quidem nesciunt culpa exercitationem sed dolorem magni deleniti!",
+      link: "https://fernandoescuderodev.github.io/Cuidarte/",
     },
   ];
 
   return (
-    <main className='grid grid-cols-3 gap-2'>
+    <div className="grid grid-cols-3 gap-3">
       {datos.map((dato) => (
         <div
           key={dato}
-          className="relative efectoTarjetaPrincipal shadow-xl shadow-zinc-900 rounded-xl w-64 h-80">
+          className="relative shadow-xl shadow-zinc-900 rounded-xl w-64 h-80"
+        >
           <img
             className="h-full w-full rounded-md object-cover"
             src={dato.src}
           />
-          <div className="absolute top-0 flex h-full w-full flex-col items-center justify-center gap-6 opacity-0 transition-all duration-500 hover:opacity-100 hover:backdrop-blur-sm">
-            <h3>Pomodoro</h3>
-            <p>Parrafo</p>
-          </div>
+          <motion.div
+            className="absolute z-50 opacity-0 bg-zinc-800/60 rounded-md top-0 flex h-full w-full text-center flex-col items-center justify-center gap-6"
+            whileHover={{
+              backdropFilter: "blur(4px)",
+              opacity: 1,
+              transition: { duration: 0.2 },
+            }}
+          >
+            <h3 className="text-manz-500">{dato.title}</h3>
+            <p className="text-sm w-3/4">{dato.content}</p>
+            <div className="text-2xl gap-2 flex flex-row">
+              <a href="https://github.com/FernandoEscuderoDev" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href={dato.link} target="_blank">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </motion.div>
         </div>
       ))}
-    </main>
+    </div>
   );
 }
