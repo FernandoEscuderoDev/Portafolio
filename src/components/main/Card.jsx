@@ -46,10 +46,11 @@ export default function Card() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2">
       {datos.map((dato) => (
-        <div
+        <a
           key={dato}
+          href={dato.link} target="_blank"
           className="relative shadow-xl shadow-zinc-900 rounded-xl w-64 h-80"
         >
           <img
@@ -63,24 +64,11 @@ export default function Card() {
               opacity: 1,
               transition: { duration: 0.2 },
             }}
-            whileFocus={{
-              backdropFilter: "blur(4px)",
-              opacity: 1,
-              transition: { duration: 0.2 },
-            }}
           >
             <h3 className="text-manz-500">{dato.title}</h3>
             <p className="text-sm w-3/4">{dato.content}</p>
-            <div className="text-2xl gap-2 flex flex-row">
-              <a href="https://github.com/FernandoEscuderoDev" target="_blank">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href={dato.link} target="_blank">
-                <i class="fa-solid fa-up-right-from-square"></i>
-              </a>
-            </div>
           </motion.div>
-        </div>
+        </a>
       ))}
     </div>
   );
