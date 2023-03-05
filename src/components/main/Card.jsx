@@ -46,13 +46,13 @@ export default function Card() {
   ];
 
   return (
-    <>
+    <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-2">
       {datos.map((dato) => (
         <a
           key={dato}
           href={dato.link}
           target="_blank"
-          className="relative shadow-xl m-auto shadow-zinc-900 rounded-xl w-64 h-80"
+          className="relative shadow-xl shadow-zinc-900 rounded-xl w-64 h-80"
         >
           <img
             className="h-full w-full rounded-md object-cover"
@@ -71,6 +71,6 @@ export default function Card() {
           </motion.div>
         </a>
       ))}
-    </>
+    </div>
   );
 }
