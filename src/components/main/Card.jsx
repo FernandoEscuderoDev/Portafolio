@@ -63,7 +63,7 @@ export default function Card() {
               opacity: 1,
               transition: { duration: 0.2 },
             }}
-            whileTap={{
+            whileFocus={{
               backdropFilter: "blur(4px)",
               opacity: 1,
               transition: { duration: 0.2 },
